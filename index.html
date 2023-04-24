@@ -46,8 +46,7 @@
   </head>
   <body onclick="cfs()">
     <header class="act">文字时间</header>
-    <main>
-    </main>
+    <main></main>
     <script>
       (() => {
         const an2cn = ["〇","一","二","三","四","五","六","七","八","九"]
@@ -103,7 +102,7 @@
           for(let yera = d.getFullYear(); yera > 0 ; yera = Math.round(yera/10)){
             yera_text = an2cn[yera%10] + yera_text
           }
-          _year.innerText = yera_text
+          if (_year.innerText != yera_text) _year.innerText = yera_text
           _main.childNodes.forEach(_span => {
             if (_span.nodeName != "SPAN"){
             } else if (_span.innerText == second_text[d.getSeconds()])  {
